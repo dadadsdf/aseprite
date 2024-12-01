@@ -34,13 +34,13 @@ jobs:
 
       with:
 
-        submodules: 'recursive'
+        submodules: &#39;recursive&#39;
 
     - name: ccache
 
       uses: hendrikmuhs/ccache-action@v1
 
-      if: runner.os == 'Linux'
+      if: runner.os == &#39;Linux&#39;
 
       with:
 
@@ -50,7 +50,7 @@ jobs:
 
     - uses: ilammy/msvc-dev-cmd@v1
 
-      if: runner.os == 'Windows'
+      if: runner.os == &#39;Windows&#39;
 
     - name: Install Dependencies
 
@@ -58,7 +58,7 @@ jobs:
 
       run: |
 
-        if [[ "${{ runner.os }}" == "Linux" ]] ; then
+        if [[ &#34;${{ runner.os }}&#34; == &#34;Linux&#34; ]] ; then
 
           sudo apt-get update -qq
 
@@ -74,7 +74,7 @@ jobs:
 
       run: |
 
-        if [[ "${{ runner.os }}" == "Windows" ]] ; then
+        if [[ &#34;${{ runner.os }}&#34; == &#34;Windows&#34; ]] ; then
 
           export enable_ccache=off
 
@@ -110,7 +110,7 @@ jobs:
 
       run: |
 
-        cd build && ninja
+        cd build &amp;&amp; ninja
 
     - uses: actions/upload-artifact@v3
 
